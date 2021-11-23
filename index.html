@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIMESTRAL</title>
+    <link href="css/css.css" rel="stylesheet">
+    <script>
+        function calcular()
+        {
+        if(form1.nome.value == "")
+        {alert("Por favor digite o seu nome!");}
+
+        else if(form1.p.value == "")
+        {alert("Por favor digite o valor aplicado mensalmente!");}
+
+        else if(form1.i.value == "")
+        {alert("Por favor digite a taxa de juros!");}
+
+        else if(form1.n.value == "")
+        {alert("Por favor digite a duração!");}
+        
+        else
+        {
+
+            resultado = ((form1.p.value * ((1 + form1.i.value/100) ** form1.n.value - 1)/ form1.i.value/100) * 10000).toFixed(2)
+            alert(form1.nome.value +", se vc aplicar R$" + form1.p.value +",00 à taxa de juros de " +form1.i.value+"% ao mês, durante "+ form1.n.value +" meses, acumulará uma poupança de R$" + resultado)
+        }
+        }
+        </script>
+</head>
+        <body>
+<h2>Poupe Dinheiro</h2>
+            <form name="form1">
+
+                <div>
+                <label>Nome:</label>
+                <input class="form-control" type="text" placeholder="Isabella" name="nome">
+                </div>
+                <br>
+
+                <div>
+                <label for="InputEndereço1">Valor aplicado mensalmente:</label>
+                <input type="text" class="form-control" name = "p" >
+                </div>
+                <br>
+
+                <div>
+                <label>Taxa de juros:</label>
+                <input type="text" class="form-control" name = "i">
+                </div>
+                <br>
+
+                <div>
+                <label>Números de parcesar:</label>
+                <input type="text" class="form-control" name = "n">
+                </div>
+                <br>
+
+                <div>
+                <input type = button value = "Calcular" class = "botao"  onmousedown="calcular()">
+                </div>
+
+            </form>  
+        </body>
+</html>
